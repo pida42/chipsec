@@ -1,3 +1,32 @@
+# Build
+
+_(as root)_
+
+```
+apt-get install build-essential python-dev python gcc linux-headers-$(uname -r) nasm
+git clone https://github.com/chipsec/chipsec.git
+pip install setuptools
+cd chipsec/
+python setup.py build_ext -i
+```
+
+Result in `du -h chipsec/helper/linux/chipsec.ko`.
+
+Build tested on:
+
+```
+# uname -a
+Linux preissler-mint 5.4.0-91-generic #102-Ubuntu SMP Fri Nov 5 16:31:28 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux
+
+# cat /etc/lsb-release 
+DISTRIB_ID=LinuxMint
+DISTRIB_RELEASE=20.2
+DISTRIB_CODENAME=uma
+DISTRIB_DESCRIPTION="Linux Mint 20.2 Uma"
+```
+
+---
+
 CHIPSEC: Platform Security Assessment Framework
 ===============================================
 
